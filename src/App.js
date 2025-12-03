@@ -27,8 +27,6 @@ function App() {
             <Route path='/canon' element={<CanonScreen />} />
             <Route path='/kodak' element={<KodakScreen />} />
             <Route path='/nikon' element={<NikonScreen />} />
-
-
           </Routes>
         </Container>
       </main>

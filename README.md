@@ -1,71 +1,98 @@
-# Getting Started with Create React App
+🙌 Digi Cartell
+Trusted digital marketplace for affordable, high-quality products and innovative services designed to make everyday life easier.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+👤 About the Business
+Digi Cartell is a startup business focused on providing second-hand digicams and cameras that are reliable, affordable, and carefully quality-checked. This business aim to empower individuals to explore photography and content creation without breaking the bank. The products undergo a screening process to ensure that customers receive only the best second-hand digital devices.
 
-## Available Scripts
+This aims to provide accessible, high-quality digicams and cameras that enable creativity and storytelling through images. With this, it is believed that everyone deserves the opportunity to capture memories and create digital art—without financial barriers.
 
-In the project directory, you can run:
+============================== PROJECT STRUCTURE ==================================
+src/
+│
+├── components/
+│   └── Footer.jsx
+│   └── Header.jsx
+│   └── Product.jsx
+│   └── Rating.jsx
+│
+├── screens/
+│   ├── CanonScreen.jsx
+│   ├── FujifilmScreen.jsx
+│   ├── HomeScreen.jsx
+│   ├── KodakScreen.jsx
+│   ├── NikonScreen.jsx
+│   ├── ProductScreen.jsx
+│   ├── SamsungScreen.jsx
+│   └── SonyScreen.jsx
+│
+├── App.js
+├── bootstrap.min.css
+├── index.css
+├── index.js
+├── logo.svg
+└── products.js
 
-### `npm start`
+============================= ROUTES =============================
+1️⃣ HomeScreen ('/')
+Path: /
+Purpose: Main landing page of your app.
+Content:
+Hero section (welcome message)
+About Us / What We Do
+Mission & Vision
+Featured products (product cards)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2️⃣ ProductScreen ('/product/:id')
+Path: /product/:id
+Purpose: Displays details of a specific product.
+Content:
+Product image
+Product name, description, price
+Rating and number of reviews
+Designed to dynamically render any product using the id parameter from the URL
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3️⃣ SamsungScreen ('/samsung')
+Path: /samsung
+Purpose: Page dedicated to Samsung products.
+Content:
+Filtered list of products from your products.js where brand === 'Samsung'
+Product cards displayed in a grid layout
 
-### `npm test`
+4️⃣ FujifilmScreen ('/fujifilm')
+Path: /fujifilm
+Purpose: Page for Fujifilm products.
+Content:
+Filtered products of Fujifilm brand
+Displayed with cards, images, and prices
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+5️⃣ SonyScreen ('/sony')
+Path: /sony
+Purpose: Page for Sony products.
+Content:
+Similar layout as other brand pages
+Only products with brand === 'Sony'
 
-### `npm run build`
+6️⃣ CanonScreen ('/canon')
+Path: /canon
+Purpose: Page for Canon products.
+Content:
+Grid layout with product cards
+Filtered from products.js
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+7️⃣ KodakScreen ('/kodak')
+Path: /kodak
+Purpose: Page for Kodak products.
+Content:
+Similar layout
+Shows only Kodak brand products
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+8️⃣ NikonScreen ('/nikon')
+Path: /nikon
+Purpose: Page for Nikon products.
+Content:
+Grid of Nikon products
+Details and images same as other brand pages
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+=========================== Link =====================================
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
+Digi Cartell Facebook link: https://www.facebook.com/share/16c8HkPcX9/
