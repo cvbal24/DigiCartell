@@ -1,5 +1,4 @@
-import React, { use } from 'react'
-// Removed 'Link' as we are using window.history.back()
+import React, { useState, useEffect } from 'react' // Fixed imports
 import { useParams } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
 import products from '../products'
@@ -9,7 +8,7 @@ import axios from 'axios'
 
 function ProductScreen() {
   const { id } = useParams() 
-  const [product, setProduct] = useState([])
+  const [product, setProduct] = useState(null) // Changed [] to null since it's a single object
 
   useEffect(() => {
     async function fetchProduct() {
@@ -17,10 +16,14 @@ function ProductScreen() {
       setProduct(data)
     }
 
+    fetchProduct()
+  }, [id]) // Properly closed the hook
+
   return (
     <>
-     <link to='/' classname="btn btn-light- my-3"> Go Back </link>
-  
+      <button className="btn btn-light my-3" onClick={() => window.history.back()}>
+        Go Back
+      </button>
 
       {product ? (
         <Row>
@@ -38,9 +41,10 @@ function ProductScreen() {
               </ListGroup.Item>
               <ListGroup.Item>
                 <Rating 
-                value={product.rating} 
-                text={`${product.numReviews} reviews`}
-                color={"f8e825"} />
+                  value={product.rating} 
+                  text={`${product.numReviews} reviews`}
+                  color={"f8e825"} 
+                />
               </ListGroup.Item> 
 
               <ListGroup.Item>
@@ -49,7 +53,6 @@ function ProductScreen() {
             </ListGroup>
           </Col>
 
-          {/* Right Column: Order Card (Price, Status, Add to Cart) */}
           <Col md={3}>
             <Card>
               <ListGroup variant='flush'>
@@ -73,33 +76,30 @@ function ProductScreen() {
 
                 <ListGroup.Item> 
                   <Row>
-                  <Button
-                  classname='btn-block'
-                  type='button'
-                  disabled={product.countInStock === 0}
-                  >
-                    Add To Cart
-                  </Button>
+                    <Button
+                      className='btn-block' // Fixed className
+                      type='button'
+                      disabled={product.countInStock === 0}
+                    >
+                      Add To Cart
+                    </Button>
                   </Row>
-          
                 </ListGroup.Item>
               </ListGroup>
             </Card>
           </Col>
         </Row>
       ) : (
-
         <div>
-      <h1 className="text-center">All Products</h1>
-      <Row>
-        {products.map((product) => (
-          <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-            <Product product={product} />
-          </Col>
-        ))}
-      </Row>
-    </div>
-
+          <h1 className="text-center">All Products</h1>
+          <Row>
+            {products.map((product) => (
+              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                <Product product={product} />
+              </Col>
+            ))}
+          </Row>
+        </div>
       )}
     </>
   )

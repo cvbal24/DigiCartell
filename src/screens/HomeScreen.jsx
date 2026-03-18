@@ -1,8 +1,7 @@
-import React, {useState, useLayoutEffect, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Row, Col, Container, Card } from 'react-bootstrap'
 import axios from 'axios'
 import Product from '../components/Product'
-import products from '../products'
 
 function HomeScreen() {
   const [products, setProducts] = useState([])
@@ -58,7 +57,7 @@ function HomeScreen() {
   </div>
 
   <div> 
-    <h1>Latest Products</h1>
+    <h1> Check our Latest Products</h1>
     <Row>
       {products.map((product) => (
         <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
